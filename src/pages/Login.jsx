@@ -15,7 +15,7 @@ const Login = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    const res = await axios.post('/api/login', { email, password });
+    const res = await axios.post('https://backend-8am.herokuapp.com/api/login', { email, password });
     if (res.error) {
       console.log(res.error);
       return

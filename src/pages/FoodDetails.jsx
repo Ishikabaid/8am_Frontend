@@ -28,13 +28,13 @@ const FoodDetails = () => {
   const dispatch = useDispatch();
 
   const getProduct = async () => {
-    const res = await axios.get(`/api/items/${id}`)
+    const res = await axios.get(`https://backend-8am.herokuapp.com/api/items/${id}`)
     console.log("pr", res)
     setProduct(res.data)
   };
 
   const fetchProducts = async () => {
-    const res = await axios.get("/api/items");
+    const res = await axios.get("https://backend-8am.herokuapp.com/api/items");
     if (res.error) {
       console.log(res.error);
       return;
@@ -67,7 +67,7 @@ const FoodDetails = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    const res = await axios.patch(`/api/review/${id}`, { enteredName, enteredEmail, reviewMsg });
+    const res = await axios.patch(`https://backend-8am.herokuapp.com/api/review/${id}`, { enteredName, enteredEmail, reviewMsg });
     setDone(true);
     setEnteredName("");
     setEnteredEmail("");

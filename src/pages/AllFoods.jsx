@@ -28,7 +28,7 @@ const AllFoods = () => {
     const result = await Promise.all(products.map(async (pr) => {
       delete pr["image02"]
       delete pr["image03"]
-      const res = await axios.post("/api/items", { ...pr });
+      const res = await axios.post("https://backend-8am.herokuapp.com/api/items", { ...pr });
       console.log(res);
       return res;
     }))
@@ -37,7 +37,7 @@ const AllFoods = () => {
   }
 
   const fetchProducts = async () => {
-    const res = await axios.get("/api/items");
+    const res = await axios.get("https://backend-8am.herokuapp.com/api/items");
     if (res.error) {
       console.log(res.error);
       return;

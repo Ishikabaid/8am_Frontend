@@ -87,7 +87,7 @@ const Home = () => {
   }, [category, allProducts]);
 
   const fetchProducts = async () => {
-    const res = await axios.get("/api/items");
+    const res = await axios.get("https://backend-8am.herokuapp.com/api/items");
     if (res.error) {
       console.log(res.error);
       return;

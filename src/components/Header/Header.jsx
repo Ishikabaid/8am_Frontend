@@ -61,7 +61,7 @@ const Header = () => {
 
   const handleLogout = async () => {
     dispatch(setUserActions.setAuthState({}))
-    await axios.get('/api/logout', { withCredentials: true });
+    await axios.get('https://backend-8am.herokuapp.com/api/logout', { withCredentials: true });
     navigate('/login', { replace: true });
   }
 

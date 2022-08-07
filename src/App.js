@@ -8,7 +8,7 @@ function App() {
   const dispatch = useDispatch();
 
   const checkUserExists = async () => {
-    const res = await axios.get("/api/check").catch((err) => {
+    const res = await axios.get("https://backend-8am.herokuapp.com/api/check").catch((err) => {
       return;
     })
     if (res?.data) {

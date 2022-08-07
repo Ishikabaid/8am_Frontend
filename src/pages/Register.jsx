@@ -18,12 +18,12 @@ const Register = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     if(nameInput && email && password && userMode) {
-      const response = await axios.post('/api/signup', { name: nameInput, email, password, role: userMode});
+      const response = await axios.post('https://backend-8am.herokuapp.com/api/signup', { name: nameInput, email, password, role: userMode});
       if(response.error){
         console.log(response.error);
         return 
       }
-      const res = await axios.post('/api/login', {email, password});
+      const res = await axios.post('https://backend-8am.herokuapp.com/api/login', {email, password});
       if(res.error){
         console.log(res.error);
         return 

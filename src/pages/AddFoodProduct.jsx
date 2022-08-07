@@ -14,7 +14,7 @@ const AddFoodProduct = () => {
 
   const submitHandler = async (e) => {
         e.preventDefault();
-        const res = await axios.post("/api/items", {title:name, price, category, image01: img, desc});
+        const res = await axios.post("https://backend-8am.herokuapp.com/api/items", {title:name, price, category, image01: img, desc});
         navigate('/foods');
   }
 
