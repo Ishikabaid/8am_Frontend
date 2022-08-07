@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from "axios";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import Layout from "./components/Layout/Layout";
+import { setUserActions } from "./store/auth.slice";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const dispatch = useDispatch();
+
+  const checkUserExists = async () => {
+    const res = await axios.get("/api/check").catch((err) => {
+      return;
+    })
+    if (res?.data) {
+      let user = {
+        id: res.data._id,
+        email: res.data.email,
+        role: res.data.role,
+        name: res.data.name
+      }
+      dispatch(setUserActions.setAuthState({ ...user }))
+    }
+  }
+
+  useEffect(() => {
+    checkUserExists();
+  }, []);
+  return <Layout />;
 }
 
 export default App;

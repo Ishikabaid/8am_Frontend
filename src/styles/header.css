@@ -1,0 +1,149 @@
+.header {
+  width: 100%;
+  height: 65px;
+  line-height: 70px;
+}
+
+.logo img {
+  width: calc(100% - 75%);
+  object-fit: contain;
+  margin-top: -18px;
+}
+
+.menu a {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #212245;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: #f5b812;
+}
+
+.active-menu {
+  color: #f5b812 !important;
+}
+
+.cart-icon i,
+.user i,
+.mobile-menu i {
+  font-size: 1.3rem;
+  color: #212245;
+  cursor: pointer;
+}
+
+.cart-icon {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: 30px;
+  right: -10px;
+  background: #1b0872;
+  color: #fff;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout-btn {
+  border: none;
+  height: 20px;
+  margin-top: -3rem;
+  font-weight: 700;
+  background-color: #fff;
+  color: #212245;
+}
+
+.mobile-menu {
+  font-weight: 600;
+  display: none;
+}
+
+.header-shrink {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 99999;
+  box-shadow: 5px 5px 15px -5px #fde4e4;
+}
+
+@media only screen and (max-width: 1200px) {
+  .header {
+    line-height: 60px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .logo img {
+    width: calc(100% - 80%);
+  }
+
+  .navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.425);
+    z-index: 99;
+    display: none;
+  }
+
+  .menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    line-height: 20px;
+  }
+
+  .menu a {
+    font-size: 0.9rem;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .cart-icon i,
+  .user i,
+  .mobile-menu i {
+    font-size: 1rem;
+  }
+
+  .show-menu {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+  }
+
+  .logo img {
+    margin-top: -15px !important;
+    width: calc(100% - 70%);
+  }
+
+  .logout-btn {
+    margin-top: -3rem;
+  }
+}
